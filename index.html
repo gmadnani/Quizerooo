@@ -10,7 +10,7 @@
 	<body>
 		<div id="nav">
 			<div class="left">
-                <a onclick="Scoring()" href="#"><h4 >View Highscore</h4></a>
+                <a onclick="AllScores()" href="#"><h4 >View Previous Scores</h4></a>
 			</div>
 			<div class="right">
 				<h4>Time: <span id="remainingTime">0</span></h4>
@@ -42,8 +42,8 @@
 
             <div id="yourScores">
                 <h2> Your Score is <span id="newscore">0</span>/10 </h2> 
-                <form><h3> Enter your name to save your score: <input type="text"></h3></form>
-                <button type="submit">Submit</button>
+                <form><h3> Enter your name to save your score: <input id= "name" type="text"></h3></form>
+                <button onclick="savingscore()">Submit</button>
                 <button type="playagain">Play Again</button>
             </div>
         </div>

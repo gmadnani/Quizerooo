@@ -1,8 +1,7 @@
 var remainingTime = 0;
 var score = 0;
 var countdown;
-var questionIndex = 0
-var score = 0
+var questionIndex = 0;
 
 var questions =[{
     questionTitle: "Whats the full form of js",
@@ -21,7 +20,7 @@ var choice3 = document.getElementById("choice3")
 var choice4 = document.getElementById("choice4")
 
 function startquiz(){
-
+    score = 0;
     remainingTime = 100;
     document.getElementById("remainingTime").innerHTML = remainingTime;
     countdown = setInterval(function(){
@@ -89,7 +88,6 @@ function solution(choice){
         remainingTime -= 5;
         document.getElementById("CorrectorIncorrect").textContent = "Incorrect";
         if(questionIndex < questions.length){
-            console.log("hi");
             starting();
         }
         else{
@@ -108,3 +106,32 @@ function showScore()
 
 }
 
+// function storingScore(){
+//     document.getElementById("submitquiz").addEventListener("click", savingscore)
+// }
+
+function savingscore(){
+   if (document.getElementById("name").value === ""){
+       alert("please enter your name to save your scores")
+       return
+   }
+
+   var storedScore = localStorage.getItem("scores");
+   var arrayScore = [];
+   if (storedScore){
+       arrayScore = JSON.parse(storedScore)
+   }
+   var playerscore = {
+       name: document.getElementById("name").value,
+       score: document.getElementById("newscore").textContent
+   }
+
+   arrayScore.push(playerscore)
+
+   var savingArray = JSON.stringify(arrayScore);
+    window.localStorage.setItem("high scores", savingArray);
+
+    console.log(arrayScore)
+
+
+}
