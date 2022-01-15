@@ -29,8 +29,9 @@ function startquiz(){
         document.getElementById("remainingTime").innerHTML = remainingTime;
         if (remainingTime == 0){
             clearInterval(countdown);
+            showScore();
         }
-    }, 1000);
+    }, 100);
     starting();
 }
 
@@ -48,13 +49,7 @@ function starting(){
     document.getElementById("choice1").addEventListener("click", select1);
     document.getElementById("choice2").addEventListener("click", select2);
     document.getElementById("choice3").addEventListener("click", select3);
-    document.getElementById("choice4").addEventListener("click", select4);
-
-    if (questionIndex > questions.length - 1) {
-        return;
-    } 
-
-    
+    document.getElementById("choice4").addEventListener("click", select4);    
 }
 
 function select1(){
@@ -81,14 +76,35 @@ function solution(choice){
         score++;
         document.getElementById("CorrectorIncorrect").textContent = "Correct";
         document.getElementById("score").textContent = score;
-        starting();
+        if(questionIndex < questions.length){
+            starting();
+        }
+        else{
+            showScore();
+        }
     }
     else{
         console.log("wrong")
         questionIndex++;
         remainingTime -= 5;
         document.getElementById("CorrectorIncorrect").textContent = "Incorrect";
-        starting();
+        if(questionIndex < questions.length){
+            console.log("hi");
+            starting();
+        }
+        else{
+            showScore();
+        }
     }
+}
+
+function showScore()
+{
+    clearInterval(countdown);
+    document.getElementById("quizBody").style.display="none";
+    document.getElementById("middle").style.display="none";
+    document.getElementById("newscore").textContent = score;
+    document.getElementById("yourScores").style.display="block";
+
 }
 
