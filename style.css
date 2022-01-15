@@ -1,11 +1,12 @@
 /* nav bar */
-.right {
-    float: right;
-}
-
 .left {
     float: left;
 }
+
+.right{
+    float: right;
+}
+
 
 #nav {
     display: block;
@@ -15,6 +16,11 @@
     border: 3px solid #4a0853;
     border-radius: 5px;
     margin: 6px;
+}
+
+#middle {
+    margin-left:0;
+    display: none;
 }
 
 /* main section */
@@ -52,6 +58,11 @@ h4 {
     padding: 5px 100px 5px 100px;
     color: blueviolet;
     font-size: 20px;
+}
+
+p {
+    font-size: 20px;
+    color: white;
 }
 
 a {
