@@ -1,51 +1,61 @@
 <!DOCTYPE html>
 
 <html>
-	<head>
-		<title>Code Quiz</title>
-		<meta charset="UTF-8">
-		<link href="style.css" rel="stylesheet" type="text/css">
-        <script src = "script.js" ></script>
-	</head>
-	<body>
-		<div id="nav">
-			<div class="left">
-                <a onclick="AllScores()" href="#"><h4 >View Previous Scores</h4></a>
-			</div>
-			<div class="right">
-				<h4>Time: <span id="remainingTime">0</span></h4>
-			</div>
-            <div id="middle">
-				<h4>Score: <span id="score">0</span>/10</h4>
-			</div>
-		</div>
-		<div id="quiz">
-            <div id="homeBody">      
-                <h1>   
-                    JavaScript Quiz!
-                </h1>
-                <h3>
-					Click to play!   
-                </h3>
-                <button onclick="startquiz()">Start!</button>
-            </div>
+  <head>
+    <title>Code Quiz</title>
+    <meta charset="UTF-8" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div id="nav">
+      <div class="left">
+        <a onclick="AllScores()" href="#"><h4>View Previous Scores</h4></a>
+      </div>
+      <div class="right">
+        <h4>Time: <span id="remainingTime">0</span></h4>
+      </div>
+      <div id="middle">
+        <h4>Score: <span id="score">0</span>/10</h4>
+      </div>
+    </div>
+    <div id="quiz">
+      <div id="homeBody">
+        <h1>JavaScript Quiz!</h1>
+        <h3>Click to play!</h3>
+        <button onclick="startquiz()">Start!</button>
+      </div>
 
-            <div id="quizBody">
-                <h2 id = "question"> </h2>
-                <button id="choice1"></button>
-                <button id="choice2"></button>
-                <button id="choice3"></button>
-                <button id="choice4"></button>
-                <hr id="line">
-                <p id= "CorrectorIncorrect"></p> 
-            </div>
+      <div id="quizBody">
+        <h2 id="question"></h2>
+        <button id="choice1"></button>
+        <button id="choice2"></button>
+        <button id="choice3"></button>
+        <button id="choice4"></button>
+        <hr id="line" />
+        <p id="CorrectorIncorrect"></p>
+      </div>
 
-            <div id="yourScores">
-                <h2> Your Score is <span id="newscore">0</span>/10 </h2> 
-                <form><h3> Enter your name to save your score: <input id= "name" type="text"></h3></form>
-                <button onclick="savingscore()">Submit</button>
-                <button type="playagain">Play Again</button>
-            </div>
-        </div>
-	</body>
+      <div id="yourScores">
+        <h2>Your Score is <span id="newscore">0</span>/10</h2>
+        <form>
+          <h3>
+            Enter your name to save your score: <input id="name" type="text" />
+          </h3>
+        </form>
+        <button onclick="savingscore()">Submit</button>
+        <button type="playagain">Play Again</button>
+      </div>
+
+      <div id= "PreviousScores">
+        <h2> Your Previous Scores: </h2>
+        <div id="AllScores"></div>
+        
+        <p>
+            <button onclick="clearScores()">Clear all the Previous Scores</button>
+            <button type="playagain">Play Again</button>
+        </p>
+      </div>
+    </div>
+  </body>
 </html>

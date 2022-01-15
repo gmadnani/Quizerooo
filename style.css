@@ -1,94 +1,98 @@
 /* nav bar */
 .left {
-    float: left;
+  float: left;
 }
 
-.right{
-    float: right;
+.right {
+  float: right;
 }
-
 
 #nav {
-    display: block;
-    background-color: #ffffff;
-    display: inline-block;
-    width: 98vw;
-    border: 3px solid #4a0853;
-    border-radius: 5px;
-    margin: 6px;
+  display: block;
+  background-color: #ffffff;
+  display: inline-block;
+  width: 98vw;
+  border: 3px solid #4a0853;
+  border-radius: 5px;
+  margin: 6px;
 }
 
 #middle {
-    margin-left:0;
-    display: none;
+  margin-left: 0;
+  display: none;
 }
 
 /* main section */
 
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #4a0853;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #4a0853;
 }
 
 #homeBody {
-    display: block;
-    text-align: center;
-    padding: 12vh;
+  display: block;
+  text-align: center;
+  padding: 12vh;
 }
 
-#quizBody{
+#quizBody {
+  display: none;
+}
+
+#yourScores {
+  display: none;
+}
+
+#PreviousScores{
     display: none;
 }
 
-#yourScores{
-    display: none;
-}
 h1 {
-    font-size: 50px;
-    color: white;
+  font-size: 50px;
+  color: white;
 }
 
-h2{
-    font-size: 40px;
-    color: white;
+h2 {
+  font-size: 40px;
+  color: white;
 }
 h3 {
-    font-size: 30px;
-    color: white;
+  font-size: 30px;
+  color: white;
 }
 
 h4 {
-    padding: 5px 100px 5px 100px;
-    color: blueviolet;
-    font-size: 20px;
+  padding: 5px 100px 5px 100px;
+  color: blueviolet;
+  font-size: 20px;
 }
 
 p {
-    font-size: 20px;
-    color: white;
+  font-size: 20px;
+  color: white;
 }
 
 a {
-    text-decoration: none;
-    color: rgb(0, 0, 0);
+  text-decoration: none;
+  color: rgb(0, 0, 0);
 }
 
 button {
-    border: none;
-    background-color: #059010;
-    color: white;
-    border-radius: 10px;
-    padding: 20px 30px 20px 30px;
-    font-size: 17px;
-    font-family: 'Roboto Slab', arial;
-    margin: 4px;
+  border: none;
+  background-color: #059010;
+  color: white;
+  border-radius: 10px;
+  padding: 20px 30px 20px 30px;
+  font-size: 17px;
+  font-family: "Roboto Slab", arial;
+  margin: 4px;
 }
 
 button:hover {
-    transition-duration: 0.4s;
-    background-color: #1c5800;
+  transition-duration: 0.4s;
+  background-color: #1c5800;
 }
 
 #quiz {
-    text-align: center;
+  text-align: center;
 }
