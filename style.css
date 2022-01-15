@@ -8,8 +8,8 @@
 }
 
 #nav {
-  display: block;
-  background-color: #ffffff;
+  /* display: block; */
+  background-color: white;
   display: inline-block;
   width: 98vw;
   border: 3px solid #4a0853;

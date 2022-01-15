@@ -24,6 +24,7 @@ var choice4 = document.getElementById("choice4");
 function startquiz() {
   score = 0;
   remainingTime = 100;
+  questionIndex = 0;
   document.getElementById("remainingTime").innerHTML = remainingTime;
   countdown = setInterval(function () {
     remainingTime--;
@@ -109,10 +110,6 @@ function showScore() {
   document.getElementById("yourScores").style.display = "block";
 }
 
-// function storingScore(){
-//     document.getElementById("submitquiz").addEventListener("click", savingscore)
-// }
-
 function savingscore() {
   if (document.getElementById("name").value === "") {
     alert("please enter your name to save your scores");
@@ -158,4 +155,13 @@ function displayScores(){
 function clearScores(){
     window.localStorage.removeItem("scores");
     document.getElementById("AllScores").innerHTML = "<p>Scores Cleared!</p>";
+}
+
+function playagain(){
+    document.getElementById("yourScores").style.display = "none";
+    document.getElementById("PreviousScores").style.display = "none";
+    //  document.getElementById("middle").style.display = "block";
+    document.getElementById("nav").style.display = "inline-block";
+    document.getElementById("homeBody").style.display = "block";
+
 }
