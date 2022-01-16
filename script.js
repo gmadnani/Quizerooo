@@ -23,6 +23,7 @@ var choice4 = document.getElementById("choice4");
 
 function startquiz() {
   score = 0;
+  document.getElementById("score").textContent = score;
   remainingTime = 100;
   questionIndex = 0;
   document.getElementById("remainingTime").innerHTML = remainingTime;
@@ -33,7 +34,7 @@ function startquiz() {
       clearInterval(countdown);
       showScore();
     }
-  }, 100);
+  }, 1000);
   starting();
 }
 
@@ -97,6 +98,7 @@ function solution(choice) {
     if (questionIndex < questions.length) {
       starting();
     } else {
+      document.getElementById("remainingTime").innerHTML = remainingTime;
       showScore();
     }
   }
@@ -154,14 +156,26 @@ function displayScores(){
 
 function clearScores(){
     window.localStorage.removeItem("scores");
-    document.getElementById("AllScores").innerHTML = "<p>Scores Cleared!</p>";
+    document.getElementById("AllScores").innerHTML = "";
 }
 
 function playagain(){
     document.getElementById("yourScores").style.display = "none";
     document.getElementById("PreviousScores").style.display = "none";
-    //  document.getElementById("middle").style.display = "block";
+    document.getElementById("middle").style.display = "none";
     document.getElementById("nav").style.display = "inline-block";
     document.getElementById("homeBody").style.display = "block";
+    localStorage.setItem("scores", "");
+    remainingTime=0;
+    clearInterval(countdown);
+    document.getElementById("remainingTime").innerHTML = remainingTime;
+}
 
+function AllScores(){
+    document.getElementById("quizBody").style.display = "none";
+    document.getElementById("yourScores").style.display = "none";
+    document.getElementById("PreviousScores").style.display = "block";
+    //  document.getElementById("middle").style.display = "block";
+    document.getElementById("nav").style.display = "none";
+    document.getElementById("homeBody").style.display = "none";
 }
