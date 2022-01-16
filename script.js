@@ -203,6 +203,7 @@ function savingscore() {
 }
 
 function displayScores() {
+  document.getElementById("AllScores").innerHTML = "";
   document.getElementById("quizBody").style.display = "none";
   document.getElementById("yourScores").style.display = "none";
   document.getElementById("PreviousScores").style.display = "block";
@@ -237,7 +238,7 @@ function playagain() {
   document.getElementById("nav").style.display = "inline-block";
   document.getElementById("homeBody").style.display = "block";
   document.getElementById("CorrectorIncorrect").textContent = "";
-  localStorage.setItem("scores", "");
+  document.getElementById("name").value = "";
   remainingTime = 0;
   clearInterval(countdown);
   document.getElementById("remainingTime").innerHTML = remainingTime;
