@@ -6,13 +6,53 @@ var questionIndex = 0;
 var questions = [
   {
     questionTitle: "Whats the full form of js",
-    choices: ["javascript", "javas", "j script", "java snake"],
-    answer: "javascript",
+    choices: ["a. javascript", "b. javas", "c. j script", "d. java snake"],
+    answer: "a. javascript",
   },
   {
     questionTitle: "Inside which HTML element do we put the JavaScript?",
     choices: ["a. <js>", "b. <javascript>", "c. <scripting>", "d. <script>"],
     answer: "d. <script>",
+  },
+  {
+    questionTitle: "The 'function' and  'var' are known as:",
+    choices: ["a. Keywords", "b. Data types", "c. Declaration statements", "d. Prototypes"],
+    answer: "c. Declaration statements",
+  },
+  {
+    questionTitle: "Which of the following variables takes precedence over the others if the names are the same?",
+    choices: ["a. Global variable", "b. The local element", "c. The two of the above", "d. None of the above"],
+    answer: "b. The local element",
+  },
+  {
+    questionTitle: "Which one of the following is the correct way for calling the JavaScript code?",
+    choices: ["a. Preprocessor", "b. Triggering Event", "c. RMI", "d. Function/Method"],
+    answer: "d. Function/Method",
+  },
+  {
+    questionTitle: "In the JavaScript, which one of the following is not considered as an error:",
+    choices: ["a. Syntax error", "b. Missing of semicolons", "c. Division by zero", "d. Missing of Bracket"],
+    answer: "c. Division by zero",
+  },
+  {
+    questionTitle: "Which of the following number object function returns the value of the number?",
+    choices: ["a. toString()", "b. valueOf()", "c. toLocaleString()", "d. toPrecision()"],
+    answer: "b. valueOf()",
+  },
+  {
+    questionTitle: "Which one of the following is an ternary operator:",
+    choices: ["a. ?", "b. :", "c. -", "d. +"],
+    answer: "a. ?",
+  },
+  {
+    questionTitle: "Which one of the following operator returns false if both values are equal?",
+    choices: ["a. !", "b. !==", "c. !=", "d. All of the above"],
+    answer: "c. !=",
+  },
+  {
+    questionTitle: "A collection of elements of the same data type which may either in order or not, is called?",
+    choices: ["a. String", "b. Array", "c. Serialized Object", "d. Object"],
+    answer: "b. Array",
   },
 ];
 
@@ -61,7 +101,6 @@ function starting() {
 }
 
 function select1() {
-  console.log("option 1");
   solution(0);
 }
 function select2() {
@@ -75,12 +114,9 @@ function select4() {
 }
 
 function solution(choice) {
-  console.log(questions[questionIndex].choices[choice]);
-
   if (
     questions[questionIndex].choices[choice] == questions[questionIndex].answer
   ) {
-    console.log("correct");
     questionIndex++;
     score++;
     document.getElementById("CorrectorIncorrect").textContent = "Correct";
@@ -91,7 +127,6 @@ function solution(choice) {
       showScore();
     }
   } else {
-    console.log("wrong");
     questionIndex++;
     remainingTime -= 5;
     document.getElementById("CorrectorIncorrect").textContent = "Incorrect";
@@ -136,46 +171,54 @@ function savingscore() {
   displayScores();
 }
 
-function displayScores(){
-    document.getElementById("nav").style.display = "none";
-    document.getElementById("yourScores").style.display = "none";
-    document.getElementById("PreviousScores").style.display = "block";
-    var savedScores = localStorage.getItem("scores")
+function displayScores() {
+  document.getElementById("quizBody").style.display = "none";
+  document.getElementById("yourScores").style.display = "none";
+  document.getElementById("PreviousScores").style.display = "block";
+  document.getElementById("middle").style.display = "none";
+  document.getElementById("nav").style.display = "none";
+  document.getElementById("homeBody").style.display = "none";
+  var savedScores = localStorage.getItem("scores");
 
-    if (savedScores == null){
-        return
-    }
+  if (savedScores == null) {
+    return;
+  }
+  if (savedScores) {
     var AllScores = JSON.parse(savedScores);
 
-    for (var i=0; i< AllScores.length; i++){
-        var eachscore = document.createElement("p");
-        eachscore.innerHTML = AllScores[i].name + " : " + AllScores[i].score;
-        document.getElementById("AllScores").append(eachscore);
+    for (var i = 0; i < AllScores.length; i++) {
+      var eachscore = document.createElement("p");
+      eachscore.innerHTML = AllScores[i].name + " : " + AllScores[i].score;
+      document.getElementById("AllScores").append(eachscore);
     }
+  }
 }
 
-function clearScores(){
-    window.localStorage.removeItem("scores");
-    document.getElementById("AllScores").innerHTML = "";
+function clearScores() {
+  window.localStorage.removeItem("scores");
+  document.getElementById("AllScores").innerHTML = "";
 }
 
-function playagain(){
-    document.getElementById("yourScores").style.display = "none";
-    document.getElementById("PreviousScores").style.display = "none";
-    document.getElementById("middle").style.display = "none";
-    document.getElementById("nav").style.display = "inline-block";
-    document.getElementById("homeBody").style.display = "block";
-    localStorage.setItem("scores", "");
-    remainingTime=0;
-    clearInterval(countdown);
-    document.getElementById("remainingTime").innerHTML = remainingTime;
+function playagain() {
+  document.getElementById("yourScores").style.display = "none";
+  document.getElementById("PreviousScores").style.display = "none";
+  document.getElementById("middle").style.display = "none";
+  document.getElementById("nav").style.display = "inline-block";
+  document.getElementById("homeBody").style.display = "block";
+  document.getElementById("CorrectorIncorrect").textContent = "";
+  localStorage.setItem("scores", "");
+  remainingTime = 0;
+  clearInterval(countdown);
+  document.getElementById("remainingTime").innerHTML = remainingTime;
 }
 
-function AllScores(){
-    document.getElementById("quizBody").style.display = "none";
-    document.getElementById("yourScores").style.display = "none";
-    document.getElementById("PreviousScores").style.display = "block";
-    //  document.getElementById("middle").style.display = "block";
-    document.getElementById("nav").style.display = "none";
-    document.getElementById("homeBody").style.display = "none";
-}
+// function AllScores(){
+//     displayScores();
+//     // document.getElementById("quizBody").style.display = "none";
+//     // document.getElementById("yourScores").style.display = "none";
+//     // document.getElementById("PreviousScores").style.display = "block";
+//     // document.getElementById("middle").style.display = "none";
+//     // document.getElementById("nav").style.display = "none";
+//     // document.getElementById("homeBody").style.display = "none";
+
+// }
