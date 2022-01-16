@@ -8,7 +8,6 @@
 }
 
 #nav {
-  /* display: block; */
   background-color: white;
   display: inline-block;
   width: 98vw;
@@ -43,8 +42,8 @@ body {
   display: none;
 }
 
-#PreviousScores{
-    display: none;
+#PreviousScores {
+  display: none;
 }
 
 h1 {

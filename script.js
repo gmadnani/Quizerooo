@@ -16,27 +16,56 @@ var questions = [
   },
   {
     questionTitle: "The 'function' and  'var' are known as:",
-    choices: ["a. Keywords", "b. Data types", "c. Declaration statements", "d. Prototypes"],
+    choices: [
+      "a. Keywords",
+      "b. Data types",
+      "c. Declaration statements",
+      "d. Prototypes",
+    ],
     answer: "c. Declaration statements",
   },
   {
-    questionTitle: "Which of the following variables takes precedence over the others if the names are the same?",
-    choices: ["a. Global variable", "b. The local element", "c. The two of the above", "d. None of the above"],
+    questionTitle:
+      "Which of the following variables takes precedence over the others if the names are the same?",
+    choices: [
+      "a. Global variable",
+      "b. The local element",
+      "c. The two of the above",
+      "d. None of the above",
+    ],
     answer: "b. The local element",
   },
   {
-    questionTitle: "Which one of the following is the correct way for calling the JavaScript code?",
-    choices: ["a. Preprocessor", "b. Triggering Event", "c. RMI", "d. Function/Method"],
+    questionTitle:
+      "Which one of the following is the correct way for calling the JavaScript code?",
+    choices: [
+      "a. Preprocessor",
+      "b. Triggering Event",
+      "c. RMI",
+      "d. Function/Method",
+    ],
     answer: "d. Function/Method",
   },
   {
-    questionTitle: "In the JavaScript, which one of the following is not considered as an error:",
-    choices: ["a. Syntax error", "b. Missing of semicolons", "c. Division by zero", "d. Missing of Bracket"],
+    questionTitle:
+      "In the JavaScript, which one of the following is not considered as an error:",
+    choices: [
+      "a. Syntax error",
+      "b. Missing of semicolons",
+      "c. Division by zero",
+      "d. Missing of Bracket",
+    ],
     answer: "c. Division by zero",
   },
   {
-    questionTitle: "Which of the following number object function returns the value of the number?",
-    choices: ["a. toString()", "b. valueOf()", "c. toLocaleString()", "d. toPrecision()"],
+    questionTitle:
+      "Which of the following number object function returns the value of the number?",
+    choices: [
+      "a. toString()",
+      "b. valueOf()",
+      "c. toLocaleString()",
+      "d. toPrecision()",
+    ],
     answer: "b. valueOf()",
   },
   {
@@ -45,12 +74,14 @@ var questions = [
     answer: "a. ?",
   },
   {
-    questionTitle: "Which one of the following operator returns false if both values are equal?",
+    questionTitle:
+      "Which one of the following operator returns false if both values are equal?",
     choices: ["a. !", "b. !==", "c. !=", "d. All of the above"],
     answer: "c. !=",
   },
   {
-    questionTitle: "A collection of elements of the same data type which may either in order or not, is called?",
+    questionTitle:
+      "A collection of elements of the same data type which may either in order or not, is called?",
     choices: ["a. String", "b. Array", "c. Serialized Object", "d. Object"],
     answer: "b. Array",
   },
@@ -211,14 +242,3 @@ function playagain() {
   clearInterval(countdown);
   document.getElementById("remainingTime").innerHTML = remainingTime;
 }
-
-// function AllScores(){
-//     displayScores();
-//     // document.getElementById("quizBody").style.display = "none";
-//     // document.getElementById("yourScores").style.display = "none";
-//     // document.getElementById("PreviousScores").style.display = "block";
-//     // document.getElementById("middle").style.display = "none";
-//     // document.getElementById("nav").style.display = "none";
-//     // document.getElementById("homeBody").style.display = "none";
-
-// }
