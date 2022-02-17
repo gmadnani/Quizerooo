@@ -29,3 +29,6 @@ Quizerooo is a competitive quiz website that test your javascript fundamentals a
 https://gmadnani.github.io/Quizerooo/
 
 https://github.com/gmadnani/Quizerooo/
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
